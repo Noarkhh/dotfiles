@@ -42,30 +42,3 @@ require("lazy").setup({
     },
   },
 })
-
-require("nightfox").setup({
-  options = {
-    transparent = true,
-  },
-  --specs = {
-  --all = {
-  --syntax = {
-  --func = "blue",
-  --},
-  --},
-  --},
-  groups = {
-    all = {
-      Function = { fg = "palette.blue" },
-    },
-  },
-})
-
-require("config.colorscheme")
-
-vim.cmd("colorscheme nightfox")
-require("toggleterm").setup({
-  open_mapping = [[<C-\>]],
-  direction = "vertical",
-  size = vim.o.columns * 0.3,
-})
