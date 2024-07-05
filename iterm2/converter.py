@@ -83,12 +83,11 @@ def stringify_colorscheme_to_lua(colorscheme):
 require('nightfox').setup({{
   palettes = {{
     all = {{
+      orange = {{ base = "#d09469", bright = "#d09469"}},
 {res_str}
     }},
   }},
 }})
-
-vim.cmd('colorscheme nightfox')
 """
 
 def write_lua_colorscheme(lua_colorscheme_string, target):
@@ -96,7 +95,7 @@ def write_lua_colorscheme(lua_colorscheme_string, target):
         f.write(lua_colorscheme_string)
 
 if __name__ == "__main__":
-    parsed_colorscheme = parse_xml_colorscheme("~/.config/iterm2/floral.itermcolors")
+    parsed_colorscheme = parse_xml_colorscheme("/Users/noarkhh/dotfiles/iterm2/floral.itermcolors")
     translated_colorscheme = translate_colorscheme(parsed_colorscheme)
     lua_colorscheme_string = stringify_colorscheme_to_lua(translated_colorscheme)
-    write_lua_colorscheme(lua_colorscheme_string, "~/.config/nvim/lua/config/colorscheme.lua")
+    write_lua_colorscheme(lua_colorscheme_string, "Users/noarkhh/dotfiles/nvim/lua/config/colorscheme.lua")
