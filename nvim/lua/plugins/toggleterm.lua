@@ -3,7 +3,7 @@ return {
   version = "*",
   config = function()
     require("toggleterm").setup({
-      open_mapping = [[<leader>\]],
+      open_mapping = [[<C-,>]],
       direction = "vertical",
       size = vim.o.columns * 0.3,
       on_open = function(_)

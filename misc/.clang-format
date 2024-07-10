@@ -1,0 +1,10 @@
+BasedOnStyle: LLVM
+IndentWidth: 2 
+BreakBeforeBraces: Attach 
+UseTab: Never 
+ColumnLimit: 100 
+AlignAfterOpenBracket: BlockIndent
+BinPackParameters: false 
+BinPackArguments: false 
+PenaltyReturnTypeOnItsOwnLine: 1000000000 
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse
