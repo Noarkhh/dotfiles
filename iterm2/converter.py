@@ -73,18 +73,20 @@ def translate_colorscheme(parsed_xml_colorscheme):
 
 def stringify_colorscheme_to_lua(colorscheme):
     res_str = ""
-    for key, colors in colorscheme.items():
+    for i, (key, colors) in enumerate(colorscheme.items()):
+        if i != 0:
+            res_str += "\n"
         if isinstance(colors, dict):
-            res_str += f"      {key} = {{ base = {colors['base']}, bright = {colors['bright']}}},\n"
+            res_str += f"      {key} = {{ base = {colors['base']}, bright = {colors['bright']} }},"
         else:
-            res_str += f"      {key} = {colors},\n"
+            res_str += f"      {key} = {colors},"
 
-    return f"""
-require('nightfox').setup({{
+    return f"""require("nightfox").setup({{
   palettes = {{
     all = {{
-      orange = {{ base = "#d09469", bright = "#d09469"}},
+      orange = {{ base = "#d09469", bright = "#d09469" }},
 {res_str}
+      fg4 = {colorscheme["blue"]["base"]},
     }},
   }},
 }})
