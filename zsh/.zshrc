@@ -133,7 +133,7 @@ alias mb="mix burn"
 alias mfwb="mix firmware.burn"
 alias mfwu="mix firmware && mix upload"
 
-alias vim="nvim"
+alias v="nvim ."
 export PATH="/Users/noarkhh/.local/bin:/Users/noarkhh/Scripts:$PATH"
 
 export JAVA_HOME=$(/usr/libexec/java_home)

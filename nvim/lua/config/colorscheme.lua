@@ -12,7 +12,8 @@ require("nightfox").setup({
       white = { base = "#e6e6e6", bright = "#e6e6e6" },
       bg1 = "#334244",
       fg1 = "#deeadd",
-      fg4 = "#829e96",
+      bg4 = "#829e96",
+      sel0 = "#3b5154",
     },
   },
 })

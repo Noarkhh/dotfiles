@@ -86,7 +86,7 @@ def stringify_colorscheme_to_lua(colorscheme):
     all = {{
       orange = {{ base = "#d09469", bright = "#d09469" }},
 {res_str}
-      fg4 = {colorscheme["blue"]["base"]},
+      bg4 = {colorscheme["blue"]["base"]},
     }},
   }},
 }})

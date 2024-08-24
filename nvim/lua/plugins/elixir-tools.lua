@@ -14,6 +14,8 @@ return {
         settings = elixirls.settings({
           dialyzerEnabled = true,
           enableTestLenses = false,
+          fetchDeps = false,
+          mixEnv = "dev",
         }),
         on_attach = function(client, bufnr)
           vim.keymap.set("n", "<space>fp", ":ElixirFromPipe<cr>", { buffer = true, noremap = true })
