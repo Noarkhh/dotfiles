@@ -15,7 +15,7 @@ return {
           dialyzerEnabled = true,
           enableTestLenses = false,
           fetchDeps = false,
-          mixEnv = "dev",
+          mixEnv = "test",
         }),
         on_attach = function(client, bufnr)
           vim.keymap.set("n", "<space>fp", ":ElixirFromPipe<cr>", { buffer = true, noremap = true })

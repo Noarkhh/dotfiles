@@ -12,7 +12,7 @@ vim.keymap.set("t", "<C-Esc>", "<Esc>", { noremap = true })
 
 vim.keymap.set("n", "s", "a<BS>", { noremap = true })
 
-vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>//g<left><left>", { noremap = true })
+vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>//g<left><left><C-r><C-w>", { noremap = true })
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -30,3 +30,5 @@ vim.keymap.set("n", 'c"', "cf_")
 vim.keymap.set("n", "yil", "^y$")
 vim.keymap.set("n", "cil", "^c$")
 vim.keymap.set("n", "dil", "^d$")
+
+vim.keymap.set("n", "<leader>ci", 'a |> IO.inspect(label: "")<left><left>')
