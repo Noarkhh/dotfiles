@@ -127,6 +127,8 @@ alias mdunu="mix deps.unlock --unused"
 alias mf="mix format"
 alias mc="mix compile"
 alias mcr="mix credo"
+alias mr="mix run"
+alias mrd="mix run dupa.exs"
 
 alias mfw="mix firmware"
 alias mb="mix burn"
