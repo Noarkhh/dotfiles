@@ -9,7 +9,9 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+export DOTFILES="$HOME/dotfiles"
 export ZSH="$HOME/.oh-my-zsh"
+export ZSH_CUSTOM="$DOTFILES/zsh/.oh-my-zsh/custom"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -136,9 +138,11 @@ alias mfwb="mix firmware.burn"
 alias mfwu="mix firmware && mix upload"
 
 alias v="nvim ."
-export PATH="/Users/noarkhh/.local/bin:/Users/noarkhh/Scripts:$PATH"
+export PATH="/Users/noarkhh/.local/bin:/Users/noarkhh/Scripts:${PATH}"
 
-export JAVA_HOME=$(/usr/libexec/java_home)
+if [[ -f /usr/libexec/java_home ]]; then
+  export JAVA_HOME=$(/usr/libexec/java_home)
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/dotfiles/zsh/.p10k.zsh ]] || source ~/dotfiles/zsh/.p10k.zsh
+[[ ! -f "${DOTFILES}/zsh/.p10k.zsh" ]] || source "${DOTFILES}/zsh/.p10k.zsh"
