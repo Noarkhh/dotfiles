@@ -138,7 +138,7 @@ alias mfwb="mix firmware.burn"
 alias mfwu="mix firmware && mix upload"
 
 alias v="nvim ."
-export PATH="/Users/noarkhh/.local/bin:/Users/noarkhh/Scripts:${PATH}"
+export PATH="/opt/nvim-linux64/bin:/Users/noarkhh/.local/bin:/Users/noarkhh/Scripts:${PATH}"
 
 if [[ -f /usr/libexec/java_home ]]; then
   export JAVA_HOME=$(/usr/libexec/java_home)
