@@ -43,3 +43,4 @@ require("lazy").setup({
 })
 require("lspconfig").clangd.setup({})
 require("lspconfig").pyright.setup({})
+--require("lspconfig").elixirls.setup({ cmd = { "/Users/noarkhh/Misc/elixir-ls/language_server.sh" } })
