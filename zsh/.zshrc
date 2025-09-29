@@ -12,6 +12,7 @@ fi
 export DOTFILES="$HOME/dotfiles"
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$DOTFILES/zsh/.oh-my-zsh/custom"
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
