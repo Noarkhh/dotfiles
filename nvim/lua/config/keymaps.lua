@@ -32,3 +32,9 @@ vim.keymap.set("n", "cil", "^c$")
 vim.keymap.set("n", "dil", "^d$")
 
 vim.keymap.set("n", "<leader>ci", 'a |> IO.inspect(label: "")<left><left>')
+
+vim.keymap.set("n", "<S-h>", "^")
+vim.keymap.set("n", "<S-l>", "$")
+
+vim.keymap.set("n", "<C-h>", "<cmd>BufferLineCyclePrev<cr>")
+vim.keymap.set("n", "<C-l>", "<cmd>BufferLineCycleNext<cr>", { noremap = true })
