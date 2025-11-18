@@ -111,8 +111,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-. "$HOME/.asdf/asdf.sh"
-. "$HOME/.asdf/completions/asdf.bash"
+#. "$HOME/.asdf/asdf.sh"
+#. "$HOME/.asdf/completions/asdf.bash"
 
 alias l="ls -alF"
 alias rmr="rm -rf"
@@ -140,7 +140,7 @@ alias mfwb="mix firmware.burn"
 alias mfwu="mix firmware && mix upload"
 
 alias v="nvim ."
-export PATH="/opt/nvim-linux64/bin:/Users/noarkhh/.local/bin:/Users/noarkhh/Scripts:${PATH}"
+export PATH="/opt/nvim-linux64/bin:${HOME}/.local/bin:${HOME}/Scripts:${PATH}"
 
 if [[ -f /usr/libexec/java_home ]]; then
   export JAVA_HOME=$(/usr/libexec/java_home)
@@ -151,16 +151,20 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/noarkhh/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/noarkhh/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/noarkhh/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/noarkhh/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+#__conda_setup="$('/Users/noarkhh/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+    #eval "$__conda_setup"
+#else
+    #if [ -f "/Users/noarkhh/miniconda3/etc/profile.d/conda.sh" ]; then
+        #. "/Users/noarkhh/miniconda3/etc/profile.d/conda.sh"
+    #else
+        #export PATH="/Users/noarkhh/miniconda3/bin:$PATH"
+    #fi
+#fi
+#unset __conda_setup
 # <<< conda initialize <<<
 
+export ASDF_DATA_DIR="$HOME/.asdf"
+export PATH="$HOME/.local/share/coursier/bin:$ASDF_DATA_DIR/shims:$PATH"
+
+. "$HOME/.asdf/plugins/java/set-java-home.zsh"
