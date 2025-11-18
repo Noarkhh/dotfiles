@@ -163,8 +163,12 @@ fi
 #fi
 #unset __conda_setup
 # <<< conda initialize <<<
+export PATH="$PATH:/Users/noarkhh/Library/Application Support/Coursier/bin"
 
 export ASDF_DATA_DIR="$HOME/.asdf"
 export PATH="$HOME/.local/share/coursier/bin:$ASDF_DATA_DIR/shims:$PATH"
 
-. "$HOME/.asdf/plugins/java/set-java-home.zsh"
+if [[ -f "${HOME}/.asdf/plugins/java" ]]; then
+  . "$HOME/.asdf/plugins/java/set-java-home.zsh"
+fi
+

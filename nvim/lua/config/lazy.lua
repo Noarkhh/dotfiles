@@ -42,8 +42,4 @@ require("lazy").setup({
   },
 })
 vim.g.python3_host_prog = vim.fn.expand("~/.venvs/neovim/bin/python3")
---require("lspconfig").clangd.setup({})
---require("lspconfig").pyright.setup({})
---require("lspconfig").metals.setup({})
 vim.lsp.enable({ "clangd", "pyright", "metals" })
---require("lspconfig").elixirls.setup({ cmd = { "/Users/noarkhh/Misc/elixir-ls/language_server.sh" } })

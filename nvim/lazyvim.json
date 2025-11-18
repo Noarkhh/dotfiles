@@ -2,7 +2,8 @@
   "extras": [
     "lazyvim.plugins.extras.coding.nvim-cmp",
     "lazyvim.plugins.extras.editor.telescope",
-    "lazyvim.plugins.extras.lang.markdown"
+    "lazyvim.plugins.extras.lang.markdown",
+    "lazyvim.plugins.extras.formatting.black"
   ],
   "install_version": 7,
   "news": {
