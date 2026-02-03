@@ -1,5 +1,6 @@
-elixir 1.18.4-otp-27
-erlang 27.3
+elixir 1.19.4-otp-28
+erlang 28.1.1
 python 3.11.0
 java adoptopenjdk-17.0.16+8
 scala 3.7.3
+zig 0.15.2

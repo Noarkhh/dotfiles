@@ -8,6 +8,9 @@ local on_buf_enter_cb = function()
     vim.opt_local.expandtab = true
     vim.opt_local.textwidth = 79
   end
+  if vim.bo.filetype == "markdown" then
+    vim.opt_local.textwidth = 80
+  end
 end
 local group = vim.api.nvim_create_augroup("OnBufEnter", { clear = true })
 vim.api.nvim_create_autocmd("BufEnter", { group = group, pattern = "*", callback = on_buf_enter_cb })
