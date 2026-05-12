@@ -32,6 +32,8 @@ yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^ffplay$" manage=off
 yabai -m rule --add app="^Calendar$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^RabbitsMain$" manage=off
+yabai -m rule --add app="^LocustMain$" manage=off
 
 yabai -m rule --add app="^iTerm2$" space=1
 yabai -m rule --add app="^Slack$" space=4

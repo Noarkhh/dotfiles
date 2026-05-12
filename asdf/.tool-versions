@@ -4,3 +4,4 @@ python 3.11.0
 java adoptopenjdk-17.0.16+8
 scala 3.7.3
 zig 0.15.2
+dexter 0.5.3

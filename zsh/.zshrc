@@ -140,6 +140,8 @@ alias mfwb="mix firmware.burn"
 alias mfwu="mix firmware && mix upload"
 
 alias v="nvim ."
+
+alias cd="z"
 export PATH="/opt/nvim-linux64/bin:${HOME}/.local/bin:${HOME}/Scripts:${PATH}"
 
 if [[ -f /usr/libexec/java_home ]]; then
@@ -172,3 +174,5 @@ if [[ -f "${HOME}/.asdf/plugins/java" ]]; then
   . "$HOME/.asdf/plugins/java/set-java-home.zsh"
 fi
 
+eval "$(zoxide init zsh)"
+source <(fzf --zsh)

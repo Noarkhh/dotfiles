@@ -13,6 +13,7 @@ vim.keymap.set("t", "<C-Esc>", "<Esc>", { noremap = true })
 vim.keymap.set("n", "s", "a<BS>", { noremap = true })
 
 vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>//g<left><left><C-r><C-w>", { noremap = true })
+vim.keymap.set("n", "<leader>z", vim.lsp.buf.rename)
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
