@@ -62,5 +62,5 @@ vim.lsp.config("clangd", {
     "configure.ac", -- AutoTools
   },
 })
-vim.lsp.enable({ "clangd", "pyright", "metals" })
+vim.lsp.enable({ "clangd", "pyright", "metals", "marksman" })
 -- vim.lsp.enable({ "clangd", "pyright", "metals", "expert", "dexter" })

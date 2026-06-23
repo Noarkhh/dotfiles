@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" && -n $ZELLIJ ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -82,7 +82,7 @@ DEFAULT_USER=$USER
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting virtualenv)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting virtualenv zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -139,10 +139,20 @@ alias mb="mix burn"
 alias mfwb="mix firmware.burn"
 alias mfwu="mix firmware && mix upload"
 
-alias v="nvim ."
+alias zv="
+  zellij action new-pane -d right && \
+  zellij action resize decrease left && \
+  zellij action resize decrease left && \
+  zellij action resize decrease left && \
+  zellij action move-focus left && \
+  zellij action rename-pane nvim"
+alias v="zv && nvim ."
+alias vv="zv && nvim"
+alias nv="nvim ."
 
 alias cd="z"
 export PATH="/opt/nvim-linux64/bin:${HOME}/.local/bin:${HOME}/Scripts:${PATH}"
+export EDITOR="nvim"
 
 if [[ -f /usr/libexec/java_home ]]; then
   export JAVA_HOME=$(/usr/libexec/java_home)
@@ -166,7 +176,6 @@ fi
 #unset __conda_setup
 # <<< conda initialize <<<
 export PATH="$PATH:/Users/noarkhh/Library/Application Support/Coursier/bin"
-
 export ASDF_DATA_DIR="$HOME/.asdf"
 export PATH="$HOME/.local/share/coursier/bin:$ASDF_DATA_DIR/shims:$PATH"
 
@@ -176,3 +185,5 @@ fi
 
 eval "$(zoxide init zsh)"
 source <(fzf --zsh)
+eval "$(zellij setup --generate-auto-start zsh)"
+bindkey -v
