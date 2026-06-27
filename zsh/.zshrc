@@ -171,8 +171,8 @@ if [[ -f "${HOME}/.asdf/plugins/java" ]]; then
   . "$HOME/.asdf/plugins/java/set-java-home.zsh"
 fi
 
-eval "$(zoxide init zsh)"
-source <(fzf --zsh)
+# eval "$(zoxide init zsh)"
+# source <(fzf --zsh)
 eval "$(zellij setup --generate-auto-start zsh)"
 
 zellij_tab_name_update() {

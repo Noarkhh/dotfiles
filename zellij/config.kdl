@@ -312,7 +312,7 @@ keybinds clear-defaults=true {
 // changing these requires a restart to take effect
 plugins {
     about location="zellij:about"
-    autolock location="file:/Users/noarkhh/.config/zellij/plugins/zellij-autolock.wasm" {
+    autolock location="file:~/.config/zellij/plugins/zellij-autolock.wasm" {
         is_enabled true
         print_to_log false
         reaction_seconds "0.3"
