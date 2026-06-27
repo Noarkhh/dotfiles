@@ -1,4 +1,4 @@
 return {
   "MeanderingProgrammer/render-markdown.nvim",
-  opts = {},
+  opts = { render_modes = true },
 }

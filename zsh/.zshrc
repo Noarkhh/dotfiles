@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" && -n $ZELLIJ ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" && -n $ZELLIJ ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -139,20 +139,8 @@ alias mb="mix burn"
 alias mfwb="mix firmware.burn"
 alias mfwu="mix firmware && mix upload"
 
-alias zv="
-  zellij action new-pane -d right && \
-  zellij action resize decrease left && \
-  zellij action resize decrease left && \
-  zellij action resize decrease left && \
-  zellij action move-focus left && \
-  zellij action rename-pane nvim"
-alias v="zv && nvim ."
-alias vv="zv && nvim"
-alias nv="nvim ."
-
-alias cd="z"
+# alias cd="z"
 export PATH="/opt/nvim-linux64/bin:${HOME}/.local/bin:${HOME}/Scripts:${PATH}"
-export EDITOR="nvim"
 
 if [[ -f /usr/libexec/java_home ]]; then
   export JAVA_HOME=$(/usr/libexec/java_home)
@@ -186,4 +174,24 @@ fi
 eval "$(zoxide init zsh)"
 source <(fzf --zsh)
 eval "$(zellij setup --generate-auto-start zsh)"
+
+zellij_tab_name_update() {
+  if [[ -n $ZELLIJ ]]; then
+    if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+        tab_name=$(basename "$(git rev-parse --show-toplevel)")
+    else
+        tab_name=$PWD
+            if [[ $tab_name == $HOME ]]; then
+         	tab_name="~"
+             else
+         	tab_name=${tab_name##*/}
+             fi
+    fi
+    command nohup zellij action rename-tab $tab_name >/dev/null 2>&1
+  fi
+}
+
+zellij_tab_name_update
+chpwd_functions+=(zellij_tab_name_update)
+
 bindkey -v

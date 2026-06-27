@@ -37,13 +37,8 @@ vim.keymap.set("n", "<leader>ci", 'a |> IO.inspect(label: "")<left><left>')
 vim.keymap.set("n", "<S-h>", "^")
 vim.keymap.set("n", "<S-l>", "$")
 
-vim.keymap.set("n", "<C-h>", "<cmd>BufferLineCyclePrev<cr>")
-vim.keymap.set("n", "<C-l>", "<cmd>BufferLineCycleNext<cr>", { noremap = true })
-
-vim.keymap.set("n", "<A-h>", "<cmd>ZellijNavigateLeft!<cr>")
-vim.keymap.set("n", "<A-l>", "<cmd>ZellijNavigateRight!<cr>")
-vim.keymap.set("n", "<A-j>", "<cmd>ZellijNavigateDown<cr>")
-vim.keymap.set("n", "<A-k>", "<cmd>ZellijNavigateUp<cr>")
+vim.keymap.set("n", "<C-[>", "<cmd>BufferLineCyclePrev<cr>")
+vim.keymap.set("n", "<C-]>", "<cmd>BufferLineCycleNext<cr>", { noremap = true })
 
 if vim.env.ZELLIJ == nil then
   vim.keymap.set("n", "<A-h>", "<C-w>h")
@@ -51,8 +46,8 @@ if vim.env.ZELLIJ == nil then
   vim.keymap.set("n", "<A-j>", "<C-w>j")
   vim.keymap.set("n", "<A-k>", "<C-w>k")
 else
-  vim.keymap.set("n", "<A-h>", "<cmd>ZellijNavigateLeft!<cr>")
-  vim.keymap.set("n", "<A-l>", "<cmd>ZellijNavigateRight!<cr>")
+  vim.keymap.set("n", "<A-h>", "<cmd>ZellijNavigateLeft<cr>")
+  vim.keymap.set("n", "<A-l>", "<cmd>ZellijNavigateRight<cr>")
   vim.keymap.set("n", "<A-j>", "<cmd>ZellijNavigateDown<cr>")
   vim.keymap.set("n", "<A-k>", "<cmd>ZellijNavigateUp<cr>")
 end
